@@ -12,7 +12,8 @@
     "@fastify/formbody": "^7.4.0",
     "@fastify/static": "^6.10.2",
     "@fastify/view": "^8.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "socket.io": "^4.7.3"
   },
   "engines": {
     "node": "14.x"
