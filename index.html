@@ -6,7 +6,7 @@
 </head>
 <body>
   <div id="chat">
-    <ul id="messages"></ul>
+   
     <form id="form">
       <input id="input" autocomplete="off" />
       <button>Send</button>
@@ -18,7 +18,7 @@
 
     var form = document.getElementById('form');
     var input = document.getElementById('input');
-    var messages = document.getElementById('messages');
+
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -28,11 +28,7 @@
       }
     });
 
-    socket.on('chat message', function(msg) {
-      var li = document.createElement('li');
-      li.innerText = msg;
-      messages.appendChild(li);
-    });
+   
   </script>
 </body>
 </html>
