@@ -5,8 +5,9 @@ const http = require('http');
 const server = http.createServer(app);
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirName+'/index')
+    res.sendFile(__dirname+'/index.html')
 });
+
 server.listen(3000, () => {
     console.log('listening on port 3000');
 });
