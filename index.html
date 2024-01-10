@@ -6,10 +6,10 @@
 </head>
 <body>
   <div id="chat">
-   
+    <ul id="messages"></ul>
     <form id="form">
       <input id="input" autocomplete="off" />
-      <button onclick="Xuly()">Send</button>
+      <button type="submit">Send</button>
     </form>
   </div>
 
@@ -18,19 +18,22 @@
 
     var form = document.getElementById('form');
     var input = document.getElementById('input');
-    
-    function Xuly()
-    {
-       if (input.value) {
-      socket.emit('chat message', input.value);
-      input.value = '';
-      
-    }
-    }
+    var messages = document.getElementById('messages');
 
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit('chat message', input.value);
+        input.value = '';
+      }
+    });
 
-
-   
+    socket.on('chat message', function(msg) {
+      var item = document.createElement('li');
+      item.textContent = msg;
+      messages.appendChild(item);
+      window.scrollTo(0, document.body.scrollHeight);
+    });
   </script>
 </body>
 </html>
