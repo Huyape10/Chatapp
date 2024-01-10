@@ -9,7 +9,7 @@
    
     <form id="form">
       <input id="input" autocomplete="off" />
-      <button>Send</button>
+      <button onclick="Xuly()" >Send</button>
     </form>
   </div>
 
@@ -19,14 +19,14 @@
     var form = document.getElementById('form');
     var input = document.getElementById('input');
 
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
+funtction Xuly()
+    {
       if (input.value) {
         socket.emit('chat message', input.value);
         input.value = '';
-      }
-    });
+    }
+      
+  
 
    
   </script>
