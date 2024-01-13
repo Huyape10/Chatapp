@@ -2,11 +2,9 @@
 <html>
 <head>
   <title>Socket.io Chat</title>
-
-
-<script src="/socket.io/socket.io.js"></script>
-  
+<script src="/socket.io/socket.io.js"></script> 
 </head>
+  
 <body>
   <div id="chat">
     <ul id="messages"></ul>
@@ -15,10 +13,17 @@
       <button type="submit">Send</button>
     </form>
   </div>
+  
+</body>
+  
+</html>
 
-  <script>
+
+<!-- script.js  -->
+<script>
     var socket = io();
-
+      
+  var name1= prompt("Write your nickname below:");
     var form = document.getElementById('form');
     var input = document.getElementById('input');
     var messages = document.getElementById('messages');
@@ -38,16 +43,9 @@
       window.scrollTo(0, document.body.scrollHeight);
     });
   </script>
-  
-</body>
-</html>
 
 
-
-
-
-
-
+<!-- style.css  -->
 
 <style>
   body {
