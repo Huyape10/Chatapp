@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/src/index.html')
 });
 
-
+// nhận rồi truyền dữ liệu lên các clients 
 io.on('connection', (socket) => {
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg);
