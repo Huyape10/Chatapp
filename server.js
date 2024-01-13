@@ -7,6 +7,19 @@ const server = createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
 
+const fastify = require("fastify")({
+  // Set this to true for detailed logging:
+  logger: false,
+});
+
+// ADD FAVORITES ARRAY VARIABLE FROM TODO HERE
+
+// Setup our static files
+fastify.register(require("@fastify/static"), {
+  root: path.join(__dirname, "public"),
+  prefix: "/", // optional: default '/'
+});
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/src/index.html')
 });
